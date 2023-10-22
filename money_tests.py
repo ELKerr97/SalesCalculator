@@ -36,9 +36,9 @@ def should_return0_when_givenRookiePayScaleZeroTarget():
     actual = calculate_sales_needed(rookie_payscale, target_earnings, cancel_rate,acv)
     expected = 0
     if actual != expected:
-        print(f"FAILED. Actual: {actual}, Expected: {expected}")
+        print(f"FAILED. Actual: {actual}, Expected: {expected} ❌")
     else:
-        print("SUCCESS👍")
+        print("SUCCESS 👍")
 
 def should_return0_when_givenRookiePayScaleNegativeTarget():
     print("Given $-100 and Rookie Pay, should return 0:", end=' ')
@@ -46,9 +46,9 @@ def should_return0_when_givenRookiePayScaleNegativeTarget():
     actual = calculate_sales_needed(rookie_payscale, target_earnings, cancel_rate,acv)
     expected = 0
     if actual != expected:
-        print(f"FAILED. Actual: {actual}, Expected: {expected}")
+        print(f"FAILED. Actual: {actual}, Expected: {expected} ❌")
     else:
-        print("SUCCESS👍")
+        print("SUCCESS 👍")
 
 def should_return563_when_givenExpPayScaleAnd173250():
     print("Given $173250 and Experienced Pay, should return 563:", end=' ')
@@ -56,9 +56,9 @@ def should_return563_when_givenExpPayScaleAnd173250():
     actual = calculate_sales_needed(experienced_payscale, target_earnings, cancel_rate,acv)
     expected = 563
     if actual != expected:
-        print(f"FAILED. Actual: {actual}, Expected: {expected}")
+        print(f"FAILED. Actual: {actual}, Expected: {expected} ❌")
     else:
-        print("SUCCESS👍")
+        print("SUCCESS 👍")
 
 def should_return344_when_givenExpPayScaleAnd86625():
     print("Given $86625 and Experienced Pay, should return 344:", end=' ')
@@ -66,9 +66,41 @@ def should_return344_when_givenExpPayScaleAnd86625():
     actual = calculate_sales_needed(experienced_payscale, target_earnings, cancel_rate,acv)
     expected = 344
     if actual != expected:
-        print(f"FAILED. Actual: {actual}, Expected: {expected}")
+        print(f"FAILED. Actual: {actual}, Expected: {expected} ❌")
     else:
-        print("SUCCESS👍")
+        print("SUCCESS 👍")
+
+def should_return10_when_givenRookiePayScaleAnd2500():
+    print("Given $2500 and Rookie Pay, should return 18:", end=' ')
+    target_earnings = 2500
+    actual = calculate_sales_needed(rookie_payscale, target_earnings, cancel_rate, acv)
+    expected = 19
+    if actual != expected:
+        print(f"FAILED. Actual: {actual}, Expected: {expected} ❌")
+    else:
+        print("SUCCESS 👍")
+
+def should_return1_when_givenExpPayScaleAnd500():
+    print("Given $500 and Experienced Pay, should return 3:", end=' ')
+    target_earnings = 500
+    actual = calculate_sales_needed(experienced_payscale, target_earnings, cancel_rate, acv)
+    expected = 4
+    if actual != expected:
+        print(f"FAILED. Actual: {actual}, Expected: {expected} ❌")
+    else:
+        print("SUCCESS 👍")
+
+def should_return0_when_givenCustomPayScaleZeroTarget():
+    print("Given $0 and Custom Pay, should return 0:", end=' ')
+    target_earnings = 0
+    actual = calculate_sales_needed(custom_payscale, target_earnings, cancel_rate, acv)
+    expected = 0
+    if actual != expected:
+        print(f"FAILED. Actual: {actual}, Expected: {expected} ❌")
+    else:
+        print("SUCCESS 👍")
+
+
 
 # Run tests
 print("Running Tests\n")
@@ -76,3 +108,6 @@ should_return0_when_givenRookiePayScaleZeroTarget()
 should_return0_when_givenRookiePayScaleNegativeTarget()
 should_return563_when_givenExpPayScaleAnd173250()
 should_return344_when_givenExpPayScaleAnd86625()
+should_return10_when_givenRookiePayScaleAnd2500()
+should_return1_when_givenExpPayScaleAnd500()
+should_return0_when_givenCustomPayScaleZeroTarget()
