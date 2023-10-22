@@ -3,6 +3,10 @@ import tkinter as tk
 from money import calculate_sales_needed
 
 def calculate_sales():
+
+     # Reset the result_label text to clear previous results
+    result_label.config(text="Calculating...")
+    
     # Get user input from the Entry widgets
     target_earnings = float(target_earnings_entry.get())
     cancellation_rate = float(cancellation_rate_entry.get())
